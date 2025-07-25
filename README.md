@@ -1,2 +1,3 @@
-# projeto_cobrinha_juta
+# Jogo da Cobrinha - Juta Academy
 
+Em construção...
