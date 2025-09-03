@@ -71,7 +71,8 @@ if(jogo) {
         	andar_corpo();
         }
         
-        moveTick = spd * GAME_SPEED; 
+        moveTick = spd * GAME_SPEED;
+        global.grid_map = att_grid_map();
         
     }
     

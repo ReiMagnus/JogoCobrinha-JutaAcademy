@@ -4,7 +4,7 @@ moveTick = spd * GAME_SPEED;
 dir = 0; // Cima = 0, Diretira = 1, Baixo = 2 e Esquerda = 3 
 dirTemp = dir;
 
-tamCorpo = 15;
+tamCorpo = 3;
 
 jogo = true;
 
@@ -29,3 +29,4 @@ function criar_comida() {
 }
 
 criar_comida();
+global.grid_map = att_grid_map();
