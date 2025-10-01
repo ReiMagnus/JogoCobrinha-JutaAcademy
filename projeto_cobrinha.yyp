@@ -36,12 +36,15 @@
   },
   "name":"projeto_cobrinha",
   "resources":[
+    {"id":{"name":"fnt_debug","path":"fonts/fnt_debug/fnt_debug.yy",},},
     {"id":{"name":"obj_body","path":"objects/obj_body/obj_body.yy",},},
     {"id":{"name":"obj_comida","path":"objects/obj_comida/obj_comida.yy",},},
     {"id":{"name":"obj_control_game","path":"objects/obj_control_game/obj_control_game.yy",},},
     {"id":{"name":"obj_head","path":"objects/obj_head/obj_head.yy",},},
     {"id":{"name":"obj_parede","path":"objects/obj_parede/obj_parede.yy",},},
+    {"id":{"name":"obj_teste","path":"objects/obj_teste/obj_teste.yy",},},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
+    {"id":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"id":{"name":"scr_ia_movimento","path":"scripts/scr_ia_movimento/scr_ia_movimento.yy",},},
     {"id":{"name":"spr_body","path":"sprites/spr_body/spr_body.yy",},},
     {"id":{"name":"spr_comida","path":"sprites/spr_comida/spr_comida.yy",},},
@@ -52,6 +55,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
+    {"roomId":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -1,12 +1,10 @@
 
-spd = 0.4;
+spd = 0.01;
 moveTick = spd * GAME_SPEED;
 dir = 0; // Cima = 0, Diretira = 1, Baixo = 2 e Esquerda = 3 
 dirTemp = dir;
 
 tamCorpo = 3;
-
-jogo = true;
 
 function criar_comida() {
     var _pX, _pY
@@ -24,9 +22,23 @@ function criar_comida() {
         }
     }
     
+    pos_comida = [_pX/GRID_TAM, _pY/GRID_TAM];
     instance_create_layer(_pX, _pY, "Instances", obj_comida);
         
 }
 
+// MOVIMENTAÇÃO DA IA
+pos_comida = [];
+if(global.modo_jogo) {
+    global.grid_map = att_grid_map();
+    fila = -1;
+    if(ds_exists(fila, ds_type_queue)) {
+        ds_queue_destroy(fila);
+        fila = ds_queue_create();
+    } else {
+        fila = ds_queue_create();
+    } 
+}
+
+// Final
 criar_comida();
-global.grid_map = att_grid_map();
