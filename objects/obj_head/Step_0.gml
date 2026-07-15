@@ -1,6 +1,7 @@
-if(global.jogo) {
 
-    moveTick--;
+if(global.jogo) { // Verificando se o jogo começou
+
+    moveTick--; // Passando o tempo para o próximo passo
     
     if(!global.modelo_ia) { // ---------------------- Manual
         
@@ -36,14 +37,8 @@ if(global.jogo) {
                 proximos_movimentos(fila, _caminho, global.modelo_ia%2);
             }
             
-            
         }
     }
-    
-    
-    
-    
-    
     
     if(moveTick <= 0) {
         // Definindo a direção do passo
@@ -61,24 +56,19 @@ if(global.jogo) {
             case 2: _yPos += GRID_TAM; break;
             case 3: _xPos -= GRID_TAM; break;
         }
-        
         // Colisões
         if(place_meeting(x+_xPos, y+_yPos, [obj_body, obj_parede])) {
             global.jogo = false;
-            show_debug_message("==================\nFIM DE JOGO\n==================")
+            show_message("==================\nFIM DE JOGO\n==================")
             return;
         }
-        
         // Cabeça dando um passo
         x += _xPos;
         y += _yPos;
-        
         // Criando um novo corpo após um passo
         var _inst = instance_create_layer(_xCorpo, _yCorpo, "Instances", obj_body);
         _inst.numCorpo = tamCorpo;
-        
-        
-        // Comendo a comida
+        // Comendo a comida ---
         var _comida = instance_place(x, y, obj_comida);
         if(_comida) {
             instance_destroy(_comida);
@@ -89,27 +79,21 @@ if(global.jogo) {
                     numCorpo++;
                 }
             }
-                
-            
+			// Verificando se a mais espaço livre na fase
             if( tamCorpo != ((LARGURA_GUI/GRID_TAM) * (ALTURA_GUI/GRID_TAM)) ) {
                 criar_comida();
-                
             } else {
                 global.jogo = false;
-                show_debug_message("==================\nVOCÊ GANHOU O JOGO!!!\n==================")
+                show_message("==================\nVOCÊ GANHOU O JOGO!!!\n==================")
             }
-            
         }
-        
-        
         // Atualizando todos corpo
         with(obj_body) {
         	andar_corpo();
         }
-        
+		// Reiniciando movimento e atualizando o mapa
         moveTick = spd * GAME_SPEED;
         global.grid_map = att_grid_map();
-        
     }
     
 }

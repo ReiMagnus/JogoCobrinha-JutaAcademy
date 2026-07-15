@@ -1,5 +1,5 @@
 
-spd = 0.01;
+spd = 0.2;
 moveTick = spd * GAME_SPEED;
 dir = 0; // Cima = 0, Diretira = 1, Baixo = 2 e Esquerda = 3 
 dirTemp = dir;
@@ -22,7 +22,7 @@ function criar_comida() {
         }
     }
     
-    pos_comida = [_pX/GRID_TAM, _pY/GRID_TAM];
+    pos_comida = [_pX/GRID_TAM, _pY/GRID_TAM]; // Variavel para a IA
     instance_create_layer(_pX, _pY, "Instances", obj_comida);
         
 }

@@ -1,4 +1,4 @@
-numCorpo = -1;
+numCorpo = pointer_null;
 
 function andar_corpo() {
     numCorpo--;
